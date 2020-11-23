@@ -43,7 +43,7 @@ jobs:
           git config user.name $GITHUB_ACTOR
           git config user.email gh-actions-${GITHUB_ACTOR}@github.com
           yarn version --new-version patch
-          git add package.json
+          git push "https://$GITHUB_TOKEN@$GIT_URL"
           git push "https://$GITHUB_TOKEN@$GIT_URL" --tags
 
       - name: Publish release

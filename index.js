@@ -53,6 +53,7 @@ module.exports = {
           "requireLast": false
       }
     }],
+    "@typescript-eslint/comma-dangle": ["error", "only-multiline"],
   },
   settings: {
     react: {
