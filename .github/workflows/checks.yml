@@ -31,12 +31,20 @@ jobs:
 
   publish:
     name: Tag and publish
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/master' && github.event.pull_request.merged
     runs-on: ubuntu-20.04
     needs: [check]
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.ADMIN_GITHUB_TOKEN }}
+
+      - name: Extract Branch Name
+        run: echo "BRANCH=$(echo ${GITHUB_REF##*/})" >> $GITHUB_ENV
+
+      - name: echo branhc name
+        run: echo $BRANCH
 
       - name: Tag release
         run: |
