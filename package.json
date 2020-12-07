@@ -1,6 +1,6 @@
 {
   "name": "@rainthief/react-lint-config",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "files": [
     "index.js",
     "stylelint.config.js",
